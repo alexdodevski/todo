@@ -1,0 +1,114 @@
+body
+    font-family: 'SegoeUI', 'sans-serif'
+    color: white
+
+.main
+    width: 100%
+    background: white
+    background-size: cover
+    height: 969px
+.container
+    max-width: 800px
+    margin: 0 auto
+    height: 100%
+    position: relative
+.todo
+    position: relative
+    top: 100px
+    height: 800px
+    width: 100%
+    background: url('img/2.jpg') no-repeat
+    background-size: cover
+    background-position: center
+    padding: 20px 50px
+    box-sizing: border-box
+.todo_container
+    height: 100%
+    position: relative
+// HEADER
+.header
+    h1
+        font-size: 28px
+    p
+        font-size: 16px
+.header_panel
+    padding-top: 30px
+    display: flex
+    justify-content: space-between
+    align-items: center
+.header_btns
+    display: flex
+.select_btn
+
+.btn_theme
+    height: 25px
+    width: 25px
+    border-radius: 5px
+    background-color: rgba(0, 0, 0, 0.6)
+    position: relative
+    cursor: pointer
+    margin-left: 10px
+    &:hover
+        transition: 0.2s
+        background-color: rgba(0, 0, 0, 0.75)
+.btn_dot
+    display: inline-block
+    border-radius: 50%
+    width: 3px
+    height: 3px
+    background-color: white
+    position: absolute
+    margin: 0 auto
+    top: 11px
+    left: 11px
+    &::after
+        content: " "
+        display: inline-block
+        border-radius: 50%
+        width: 3px
+        height: 3px
+        background-color: white
+        position: absolute
+        margin: 0 auto
+        left: 7px
+    &::before
+        content: " "
+        display: inline-block
+        border-radius: 50%
+        width: 3px
+        height: 3px
+        background-color: white
+        position: absolute
+        margin: 0 auto
+        right: 7px
+// TASK
+.task_panel
+    width: 100%
+    padding-top: 87px
+.task
+    background-color: #2F2C2C
+    height: 50px
+    width: 690px
+    border-radius: 3px
+    display: flex
+    padding-left: 10px
+    box-sizing: border-box
+    justify-content: flex-start
+    align-items: center
+    &:hover
+        background-color: #393434
+.circle_done
+    width: 17px
+    height: 17px
+    border: 2px solid #ccc
+    border-radius: 50%
+    margin-right: 15px
+.task_text
+    font-size: 15px
+.add_task
+    width: 100%
+    position: absolute
+    bottom: 25px
+    background-color: rgba(0, 0, 0, 0.6)
+    &:hover
+        cursor: pointer

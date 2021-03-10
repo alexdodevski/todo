@@ -6,10 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/responsive.css">
 </head>
 
 <body>
+    <div class="main">
+        <div class="container">
+            <div class="todo">
+                <div class="todo_container">
+                    <div class="header_panel">
+                        <div class="header">
+                            <h1>Мой день</h1>
+                            <p>четверг, 11 марта</p>
+                        </div>
+                        <div class="header_btns">
+                            <select name="category" class="select_btn">
+                            <option value="1" selected>Важно</option>
+                            <option value="2" >Сделано</option>
+                            <option value="3" >Текущие</option>
+                        </select>
+                            <div class="btn_theme">
+                                <span class="btn_dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task_panel">
+                        <div class="task">
+                            <div class="circle_done"></div>
+                            <div class="task_text">задача</div>
+                        </div>
+                    </div>
+
+                    <div class="add_task task">
+                        <div class="circle_done"></div>
+                        <div class="task_text">Добавить задачу</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <script src='app.js'></script>
 </body>
 

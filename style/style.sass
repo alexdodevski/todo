@@ -36,10 +36,17 @@ body
     display: flex
     justify-content: space-between
     align-items: center
+    margin-bottom: 30px
 .header_btns
     display: flex
 .select_btn
-
+    background-color: rgba(0, 0, 0, 0.6)
+    color: white
+    outline: none
+    border: 0
+    padding: 1px 3px
+    border-radius: 3px
+    font-size: 18px
 .btn_theme
     height: 25px
     width: 25px
@@ -47,6 +54,7 @@ body
     background-color: rgba(0, 0, 0, 0.6)
     position: relative
     cursor: pointer
+    padding: 1px 1px
     margin-left: 10px
     &:hover
         transition: 0.2s
@@ -59,8 +67,8 @@ body
     background-color: white
     position: absolute
     margin: 0 auto
-    top: 11px
-    left: 11px
+    top: 12px
+    left: 12px
     &::after
         content: " "
         display: inline-block
@@ -84,7 +92,11 @@ body
 // TASK
 .task_panel
     width: 100%
-    padding-top: 87px
+    padding-top: 5px
+    height: 530px
+    overflow: auto
+    overflow-x: hidden
+
 .task
     background-color: #2F2C2C
     height: 50px
@@ -95,20 +107,70 @@ body
     box-sizing: border-box
     justify-content: flex-start
     align-items: center
-    &:hover
-        background-color: #393434
+    position: relative
+    margin-bottom: 5px
+    width: 98%
+
 .circle_done
     width: 17px
     height: 17px
     border: 2px solid #ccc
     border-radius: 50%
     margin-right: 15px
+    cursor: pointer
 .task_text
     font-size: 15px
+    width: 92%
+.star
+    position: absolute
+    right: 15px
+    font-size: 20px
+    cursor: pointer
+// added task
 .add_task
-    width: 100%
+    width: 95.8%
     position: absolute
     bottom: 25px
     background-color: rgba(0, 0, 0, 0.6)
-    &:hover
-        cursor: pointer
+    box-sizing: border-box
+
+.task_input
+    background-color: rgba(0, 0, 0, 0)
+    color: white
+    border: 0
+    outline: 0
+    width: 100%
+
+.task_input::-moz-placeholder
+    color: white
+.task_input::-webkit-input-placeholder
+    color: white
+.task_input:focus::-webkit-input-placeholder
+    color: transparent
+.plus
+    margin-right: 15px
+    font-size: 21px
+    color: #ccc
+    opacity: 0.5
+
+//     width: 17px
+//     height: 17px
+//     position: relative
+//     margin-right: 12px
+// #elem_plus
+//     width: 100%
+//     height: 2px
+//     background-color: #ccc
+//     opacity: 0.3
+//     position: absolute
+//     top: 7.5px
+//     display: block
+//     &::after
+//         content: " "
+//         position: absolute
+//         width: 100%
+//         height: 2px
+//         display: block
+//         transform: rotate(90deg)
+//         background-color: #ccc
+//         opacity: 0.7 !important

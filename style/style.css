@@ -53,12 +53,23 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 30px;
 }
 
 .header_btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.select_btn {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  outline: none;
+  border: 0;
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-size: 18px;
 }
 
 .btn_theme {
@@ -68,6 +79,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
   position: relative;
   cursor: pointer;
+  padding: 1px 1px;
   margin-left: 10px;
 }
 .btn_theme:hover {
@@ -84,8 +96,8 @@ body {
   background-color: white;
   position: absolute;
   margin: 0 auto;
-  top: 11px;
-  left: 11px;
+  top: 12px;
+  left: 12px;
 }
 .btn_dot::after {
   content: " ";
@@ -112,7 +124,10 @@ body {
 
 .task_panel {
   width: 100%;
-  padding-top: 87px;
+  padding-top: 5px;
+  height: 530px;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .task {
@@ -132,9 +147,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-.task:hover {
-  background-color: #393434;
+  position: relative;
+  margin-bottom: 5px;
+  width: 98%;
 }
 
 .circle_done {
@@ -143,18 +158,53 @@ body {
   border: 2px solid #ccc;
   border-radius: 50%;
   margin-right: 15px;
+  cursor: pointer;
 }
 
 .task_text {
   font-size: 15px;
+  width: 92%;
+}
+
+.star {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .add_task {
-  width: 100%;
+  width: 95.8%;
   position: absolute;
   bottom: 25px;
   background-color: rgba(0, 0, 0, 0.6);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.add_task:hover {
-  cursor: pointer;
+
+.task_input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 0;
+  outline: 0;
+  width: 100%;
+}
+
+.task_input::-moz-placeholder {
+  color: white;
+}
+
+.task_input::-webkit-input-placeholder {
+  color: white;
+}
+
+.task_input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.plus {
+  margin-right: 15px;
+  font-size: 21px;
+  color: #ccc;
+  opacity: 0.5;
 }

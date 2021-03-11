@@ -161,6 +161,13 @@ body {
   cursor: pointer;
 }
 
+.circle {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  margin-right: 15px;
+}
+
 .task_text {
   font-size: 15px;
   width: 92%;
@@ -174,7 +181,7 @@ body {
 }
 
 .add_task {
-  width: 95.8%;
+  width: 98%;
   position: absolute;
   bottom: 25px;
   background-color: rgba(0, 0, 0, 0.6);

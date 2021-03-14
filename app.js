@@ -4,6 +4,24 @@ let star = document.querySelectorAll('.star')
 let done = document.querySelectorAll('.circle')
 let taskInput = document.querySelector('.task_input')
 let plus = document.querySelector('.plus')
+let checked = document.querySelector('.checked')
+let base = []
+
+
+class Todo {
+    constructor() {
+        this.favorite = false
+        this.finished = false
+    }
+    sayHi() {
+        console.log('hi')
+    }
+}
+
+checked.addEventListener('click', function() {
+    let todo = new Todo();
+    console.log(todo)
+})
 
 function starEdit(elem) {
     let starSolid = '<i class="fas fa-star"></i>'
@@ -12,6 +30,7 @@ function starEdit(elem) {
     } else {
         elem.innerHTML = starSolid
     }
+    console.log(elem)
 }
 
 function doneEdit(elem) {

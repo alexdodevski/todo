@@ -21,7 +21,7 @@
                     <div class="header_panel">
                         <div class="header">
                             <h1>Мой день</h1>
-                            <p>четверг, 11 марта</p>
+                            <p class="date">четверг, 11 марта</p>
                         </div>
                         <div class="header_btns">
                             <select name="category" class="select_btn">
@@ -44,13 +44,10 @@
                     </div>
                     <div class="add_task task">
                         <div class="plus"><i class="fas fa-plus-circle"></i></div>
-                        <div class="task_text"><input class="task_input" type="text" placeholder="Добавить задачу"></div>
+                        <div class="task_text"><input pattern="[A-Za-zА-Яа-яЁё]" class="task_input" type="text" placeholder="Добавить задачу"></div>
                     </div>
-                    <button class="checked">push</button>
                 </div>
-
             </div>
-
         </div>
     </div>
     <script src='app.js'></script>

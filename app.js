@@ -5,6 +5,21 @@ let taskPanel = document.querySelector('.task_panel')
 let taskInput = document.querySelector('.task_input')
 let plus = document.querySelector('.plus')
 let keys = Object.keys(localStorage)
+let dateElem = document.querySelector('.date')
+let currentDate = new Date()
+
+
+//update date
+function changeDate() {
+    let months = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
+    let week = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"]
+    let day = currentDate.getDate()
+    let weeklyDay = currentDate.getDay()
+    let month = currentDate.getMonth()
+
+    dateElem.innerHTML = `${week[weeklyDay]}, ${day} ${months[month]}`
+}
+changeDate()
 
 
 // prototype for TODO 
@@ -50,12 +65,24 @@ for (let key of keys) {
 }
 
 
-checked.addEventListener('click', function() {
+// checked.addEventListener('click', function() {
+//     let todo = new Todo();
+//     // todo.div = document.createElement('div')
+//     // todo.div.classList.add('task')
+//     // todo.div.innerHTML = `<div class="circle"><i class="far fa-circle"></i></div><div class="task_text">${taskInput.value}</div><div class="garbage"><i class="far fa-trash-alt"></i></div><div class="star"><i class=" far fa-star"></i></div>`
+//     // todo.div.setAttribute('currentTodo', new Date())
+//     todo.div = `<div class="task" currentTodo="${new Date()}"><div class="circle"><i class="far fa-circle"></i></div><div class="task_text">${taskInput.value}</div><div class="garbage"><i class="far fa-trash-alt"></i></div><div class="star"><i class=" far fa-star"></i></div></div>`
+//     console.log(todo)
+//     console.log(todo.div)
+//     taskPanel.innerHTML += todo.div
+//     localStorage.setItem(new Date(), JSON.stringify(todo))
+//     taskInput.value = ''
+//     console.log(localStorage)
+// })
+
+function createTodo() {
+    if (taskInput.value === "" || taskInput.value === " ") return
     let todo = new Todo();
-    // todo.div = document.createElement('div')
-    // todo.div.classList.add('task')
-    // todo.div.innerHTML = `<div class="circle"><i class="far fa-circle"></i></div><div class="task_text">${taskInput.value}</div><div class="garbage"><i class="far fa-trash-alt"></i></div><div class="star"><i class=" far fa-star"></i></div>`
-    // todo.div.setAttribute('currentTodo', new Date())
     todo.div = `<div class="task" currentTodo="${new Date()}"><div class="circle"><i class="far fa-circle"></i></div><div class="task_text">${taskInput.value}</div><div class="garbage"><i class="far fa-trash-alt"></i></div><div class="star"><i class=" far fa-star"></i></div></div>`
     console.log(todo)
     console.log(todo.div)
@@ -63,7 +90,7 @@ checked.addEventListener('click', function() {
     localStorage.setItem(new Date(), JSON.stringify(todo))
     taskInput.value = ''
     console.log(localStorage)
-})
+}
 
 
 
@@ -120,6 +147,12 @@ function plusRemove() {
 
 taskInput.addEventListener('focus', function() {
     plusEdit()
+})
+
+taskInput.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        createTodo()
+    }
 })
 
 taskInput.addEventListener('blur', function() {

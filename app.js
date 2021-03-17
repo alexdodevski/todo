@@ -80,7 +80,7 @@ function displayTodos() {
 displayTodos()
 
 
-// create and delete todo function, and edit status todo.
+// create and delete todo function.
 
 
 function createTodo() {
@@ -101,6 +101,8 @@ function removeTodo(elem) {
     elem.parentElement.remove()
     localStorage.removeItem(curChangeElem)
 }
+
+//edit favorite and finished todo`s category
 
 function starEdit(elem) {
 

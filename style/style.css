@@ -82,6 +82,7 @@ body {
   cursor: pointer;
   padding: 1px 1px;
   margin-left: 10px;
+  z-index: 10;
 }
 .btn_theme:hover {
   -webkit-transition: 0.2s;

@@ -7,7 +7,12 @@ let plus = document.querySelector('.plus')
 let keys = Object.keys(localStorage)
 let dateElem = document.querySelector('.date')
 let selectInput = document.querySelector('.select_btn')
+let btnTheme = document.querySelector('.btn_theme')
 let currentDate = new Date()
+let themeMenu = document.querySelector('.theme_menu')
+let images = document.querySelectorAll('.image')
+let selectedElem
+let todoElem = document.querySelector('.todo')
 
 
 //update date
@@ -81,10 +86,13 @@ displayTodos()
 function createTodo() {
     let data = taskInput.value
     if (data === "" || data == null || data.trim() === "") return false
+
     let todo = new Todo();
-    todo.div = `<div class="task" currentTodo="${new Date()}"><div class="circle"><i class="far fa-circle"></i></div><div class="task_text">${taskInput.value}</div><div class="garbage"><i class="far fa-trash-alt"></i></div><div class="star"><i class=" far fa-star"></i></div></div>`
+    let id = Date.now()
+
+    todo.div = `<div class="task" currentTodo="${id}"><div class="circle"><i class="far fa-circle"></i></div><div class="task_text">${taskInput.value}</div><div class="garbage"><i class="far fa-trash-alt"></i></div><div class="star"><i class=" far fa-star"></i></div></div>`
     taskPanel.innerHTML += todo.div
-    localStorage.setItem(new Date(), JSON.stringify(todo))
+    localStorage.setItem(id, JSON.stringify(todo))
     taskInput.value = ''
 }
 
@@ -203,3 +211,53 @@ selectInput.addEventListener('change', function() {
         }
     }
 })
+
+
+//theme menu
+
+btnTheme.addEventListener('click', function() {
+    if (themeMenu.style.display == 'block') themeMenu.style.display = 'none'
+    else themeMenu.style.display = 'block'
+})
+
+document.addEventListener('click', function(e) {
+    if (e.target.closest('.todo') && e.target !== btnTheme && !themeMenu.contains(e.target)) themeMenu.style.display = 'none'
+})
+
+themeMenu.addEventListener('click', function(e) {
+    let elem = e.target.closest('.image')
+    if (elem) {
+        console.log(e.target.src)
+        todoElem.style.background = `url(${e.target.src}) no-repeat center`
+        todoElem.style.backgroundSize = 'cover'
+        hightlight(elem)
+        saveSettings(elem, todoElem)
+    }
+})
+
+function hightlight(elem) {
+    if (selectedElem) {
+        selectedElem.classList.remove('active')
+    }
+    selectedElem = elem
+    elem.classList.add('active')
+}
+
+// saving and rendering settings of theme
+
+function saveSettings(value, bg) {
+    console.log(value)
+    localStorage.setItem('selectedElem', JSON.stringify(value.getAttribute('data-value')))
+    localStorage.setItem('todoStyle', JSON.stringify(bg.style.background))
+}
+
+function renderSettings() {
+    let num = JSON.parse(localStorage.getItem('selectedElem'))
+    selectedElem = images[num]
+    selectedElem.classList.add('active')
+
+    let style = JSON.parse(localStorage.getItem('todoStyle'))
+    todoElem.style.background = style
+}
+
+renderSettings()

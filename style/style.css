@@ -152,8 +152,27 @@ body {
   position: relative;
   margin-bottom: 5px;
   width: 98%;
+  -webkit-animation: opacity 0.3s;
+          animation: opacity 0.3s;
 }
 
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .circle_done {
   width: 17px;
   height: 17px;
@@ -238,6 +257,10 @@ body {
   z-index: 10;
   padding: 5px 10px;
   display: none;
+  -webkit-animation: opacity 0.3s;
+          animation: opacity 0.3s;
+  -webkit-transform-origin: right;
+          transform-origin: right;
 }
 
 .theme_header {

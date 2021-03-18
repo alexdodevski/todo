@@ -112,6 +112,14 @@ body
     position: relative
     margin-bottom: 5px
     width: 98%
+    animation: opacity 0.3s
+
+@keyframes opacity
+    0%
+        opacity: 0
+
+    100%
+        opacity: 1
 
 .circle_done
     width: 17px
@@ -176,6 +184,9 @@ body
     z-index: 10
     padding: 5px 10px
     display: none
+    animation: opacity 0.3s
+    transform-origin: right
+
 .theme_header
     position: relative
     top: 5px

@@ -53,11 +53,6 @@ let methods = {
     }
 }
 
-// method replaceAt
-String.prototype.replaceAt = function(index, replacement) {
-    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
-}
-
 // function constructor
 function Todo() {
     this.favorite = false
@@ -76,8 +71,6 @@ function displayTodos() {
         }
     }
 }
-
-displayTodos()
 
 
 // create and delete todo function.
@@ -113,7 +106,7 @@ function starEdit(elem) {
     if (elem.innerHTML == starSolid) {
         elem.innerHTML = '<i class="far fa-star"></i>'
         obj.div = elem.parentElement.outerHTML
-        if (selectInput.value != 'finished') {
+        if (selectInput.value === 'favorite') {
             Array.from(taskPanel.children).forEach(item => {
                 if (item.getAttribute('currentTodo') === curChangeElem) {
                     item.remove()
@@ -263,3 +256,4 @@ function renderSettings() {
 }
 
 renderSettings()
+displayTodos()

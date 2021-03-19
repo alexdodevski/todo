@@ -22,10 +22,9 @@ function changeDate() {
     let day = currentDate.getDate()
     let weeklyDay = currentDate.getDay()
     let month = currentDate.getMonth()
-
     dateElem.innerHTML = `${week[weeklyDay]}, ${day} ${months[month]}`
 }
-changeDate()
+
 
 
 // prototype for TODO 
@@ -53,10 +52,6 @@ let methods = {
     }
 }
 
-// method replaceAt
-String.prototype.replaceAt = function(index, replacement) {
-    return this.substr(0, index) + replacement + this.substr(index + replacement.length);
-}
 
 // function constructor
 function Todo() {
@@ -76,9 +71,6 @@ function displayTodos() {
         }
     }
 }
-
-displayTodos()
-
 
 // create and delete todo function.
 
@@ -113,7 +105,7 @@ function starEdit(elem) {
     if (elem.innerHTML == starSolid) {
         elem.innerHTML = '<i class="far fa-star"></i>'
         obj.div = elem.parentElement.outerHTML
-        if (selectInput.value != 'finished') {
+        if (selectInput.value === 'favorite') {
             Array.from(taskPanel.children).forEach(item => {
                 if (item.getAttribute('currentTodo') === curChangeElem) {
                     item.remove()
@@ -217,9 +209,10 @@ selectInput.addEventListener('change', function() {
 
 //theme menu
 
-btnTheme.addEventListener('click', function() {
+btnTheme.addEventListener('click', function(e) {
     if (themeMenu.style.display == 'block') themeMenu.style.display = 'none'
     else themeMenu.style.display = 'block'
+    console.dir(e.target)
 })
 
 document.addEventListener('click', function(e) {
@@ -263,3 +256,4 @@ function renderSettings() {
 }
 
 renderSettings()
+displayTodos()

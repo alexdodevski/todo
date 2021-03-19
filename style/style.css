@@ -100,6 +100,7 @@ body {
   margin: 0 auto;
   top: 12px;
   left: 12px;
+  z-index: 1;
 }
 .btn_dot::after {
   content: " ";
@@ -152,8 +153,27 @@ body {
   position: relative;
   margin-bottom: 5px;
   width: 98%;
+  -webkit-animation: task 0.2s;
+          animation: task 0.2s;
 }
 
+@-webkit-keyframes task {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes task {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .circle_done {
   width: 17px;
   height: 17px;
@@ -238,12 +258,44 @@ body {
   z-index: 10;
   padding: 5px 10px;
   display: none;
+  -webkit-animation: themeMenu 0.2s;
+          animation: themeMenu 0.2s;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
 }
 
+@-webkit-keyframes themeMenu {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@keyframes themeMenu {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+  }
+}
 .theme_header {
   position: relative;
   top: 5px;
   font-size: 15px;
+  -webkit-animation: task 1s;
+          animation: task 1s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .theme_img {
@@ -262,6 +314,13 @@ body {
       flex-wrap: wrap;
   -webkit-column-gap: 10px;
           column-gap: 10px;
+  -webkit-animation: task 1s;
+          animation: task 1s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .image {
@@ -280,4 +339,6 @@ body {
 
 .active {
   border: 2px #208DB2 solid;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }

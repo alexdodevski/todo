@@ -25,7 +25,6 @@
 //     let day = currentDate.getDate()
 //     let weeklyDay = currentDate.getDay()
 //     let month = currentDate.getMonth()
-
 //     dateElem.innerHTML = `${week[weeklyDay]}, ${day} ${months[month]}`
 // }
 // changeDate()

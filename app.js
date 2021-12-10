@@ -3,19 +3,19 @@
 
 
 // elements for work
-// let checked = document.querySelector('.checked')
-// let taskPanel = document.querySelector('.task_panel')
-// let taskInput = document.querySelector('.task_input')
-// let plus = document.querySelector('.plus')
-// let keys = Object.keys(localStorage)
-// let dateElem = document.querySelector('.date')
-// let selectInput = document.querySelector('.select_btn')
-// let btnTheme = document.querySelector('.btn_theme')
-// let currentDate = new Date()
-// let themeMenu = document.querySelector('.theme_menu')
-// let images = document.querySelectorAll('.image')
-// let selectedElem
-// let todoElem = document.querySelector('.todo')
+// let checked = document.querySelector('.checked')   // view
+// let taskPanel = document.querySelector('.task_panel')  // view
+// let taskInput = document.querySelector('.task_input')   // view
+// let plus = document.querySelector('.plus')    // view
+// let keys = Object.keys(localStorage)   //model
+// let dateElem = document.querySelector('.date') // view
+// let selectInput = document.querySelector('.select_btn')   // view
+// let btnTheme = document.querySelector('.btn_theme')   // view
+// let currentDate = new Date()   //model
+// let themeMenu = document.querySelector('.theme_menu')  // view
+// let images = document.querySelectorAll('.image')   // view
+// let selectedElem  // view
+// let todoElem = document.querySelector('.todo')   // view
 
 
 // //update date
